@@ -185,7 +185,7 @@ def main():
 		help='print output even when ignored files are created or modified (this flag is overridden by quiet mode)')
 	parser.add_argument('-e', '--exit-after', action='store_const', default=False, const=True,
 		help='exit after the initial sync, i.e. do not monitor the directory for changes')
-	parser.add_argument('-p', '--port', action='store', type='int', default=22, help='the port used for the ssh-connection')
+	parser.add_argument('-p', '--port', type='int', default=22, help='the port used for the ssh-connection')
 	parser.add_argument('--version', action='version', version='%(prog)s 1.2')
 	parser.add_argument('user', metavar='user@hostname', help='the remote machine (and optional user name) to login to')
 	# The user argument is passed on to rsync and ssh, so actually the 'user@'
