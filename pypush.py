@@ -80,7 +80,7 @@ class PypushHandler(watchdog.events.FileSystemEventHandler):
 
 		print 'Performing initial one-way sync'
 		args = ['rsync', '-az', # Usual flags - archive, compress
-			'-e', 'ssh -S ~/.ssh/socket-%r@%h:%p', # Connect to the master connection from earlier
+			'-e', 'ssh -S ~/.ssh/socket-%r@%h:%p -p ' + str(self.port), # Connect to the master connection from earlier
 			'./', # Sync current directory
 			self.user + ':' + self.escape(self.path)]
 
